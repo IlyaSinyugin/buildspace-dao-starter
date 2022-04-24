@@ -1,31 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App.jsx";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 
-// Import ThirdWeb
-import { ThirdwebWeb3Provider } from '@3rdweb/hooks';
+// Import thirdweb provider and Rinkeby ChainId
+import { ChainId, ThirdwebProvider } from '@thirdweb-dev/react';
 
-// Include what chains you wanna support
-// 4 = Rinkeby
-const supportedChainIds = [4];
+// This is the chainId your dApp will work on.
+const activeChainId = ChainId.Rinkeby;
 
-// Incldue what type of wallet you want to support 
-// In this case, we support Metamask - "injected wallet"
-
-const connectors = {
-  injected: {},
-};
-
-// Render the App component to the DOM
+// Wrap your app with the thirdweb provider
 ReactDOM.render(
   <React.StrictMode>
-    <ThirdwebWeb3Provider
-      connectors={connectors}
-      supportedChainIds={supportedChainIds}
-    >
+    <ThirdwebProvider desiredChainId={activeChainId}>
       <App />
-    </ThirdwebWeb3Provider>
+    </ThirdwebProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
