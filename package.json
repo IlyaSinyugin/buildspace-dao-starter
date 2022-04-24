@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "private": true,
   "dependencies": {
-    "@thirdweb-dev/react": "^2.0.7",
-    "@thirdweb-dev/sdk": "^2.0.35",
+    "@thirdweb-dev/react": "^2.0.3",
+    "@thirdweb-dev/sdk": "^2.0.19",
     "ethers": "^5.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
